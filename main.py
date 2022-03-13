@@ -16,6 +16,10 @@ from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 import os
 
+import sqlalchemy
+print(sqlalchemy.__version__)
+
+
 Base = declarative_base()
 
 from flask_wtf import FlaskForm
