@@ -24,7 +24,7 @@ Base = declarative_base()
 
 from flask_wtf import FlaskForm
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', "*(DHASIODHN*DSYA*()D")
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
