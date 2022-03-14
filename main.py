@@ -227,7 +227,7 @@ def edit_post(post_id):
         title=post.title,
         subtitle=post.subtitle,
         img_url=post.img_url,
-        author=post.author.username,  # current_user or post.author????
+        author=current_user,  # current_user or post.author????
         comments=post.comments,
         body=post.body
     )
@@ -236,7 +236,7 @@ def edit_post(post_id):
         post.title = edit_form.title.data
         post.subtitle = edit_form.subtitle.data
         post.img_url = edit_form.img_url.data
-        post.author = edit_form.author.data
+        # post.author = edit_form.author.data # why must remove?
         post.body = edit_form.body.data
         db.session.commit()
         return redirect(url_for("show_post", post_id=post.id))
