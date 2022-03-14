@@ -40,29 +40,20 @@
 
 <!--           Comments Area -->
           <div class="col-lg-8 col-md-10 mx-auto comment">
-                                   {% for comment in post.comments %}
-
+              {% for comment in post.comments %}
               <ul class="commentList">
                 <li>
-
                     <div class="commenterImage">
                       <img src="{{ 'comment.comment_author.email' | gravatar }}"/>
                     </div>
-
                     <div class="commentText">
                         {{ comment.text | safe }}
                       <span class="date sub-text"> {{ comment.comment_author.email }} </span>
                     </div>
-
-
                 </li>
-
               </ul>
-                                                    {% endfor %}
-
+              {% endfor %}
             </div>
-
-
           </div>
       </div>
     </div>
