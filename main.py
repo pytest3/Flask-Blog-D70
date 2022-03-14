@@ -16,8 +16,8 @@ from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 import os
 
-import sqlalchemy
-print(sqlalchemy.__version__)
+import flask_sqlalchemy
+print(flask_sqlalchemy.__version__)
 
 
 Base = declarative_base()
@@ -57,7 +57,7 @@ class User(UserMixin, db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
 
-    email = db.Column(db.Integer, nullable=False, unique=True)
+    email = db.Column(db.String(150), nullable=False, unique=True)
     password = db.Column(db.String(150), nullable=False)
     username = db.Column(db.String(150), nullable=False)
     posts = db.relationship("BlogPost", back_populates='author') ######## 1 #########
